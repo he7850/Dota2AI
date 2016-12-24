@@ -1,3 +1,3 @@
-function Think()
-	print("Think...")
-end
+-- function Think()
+-- 	print("Think...")
+-- end
