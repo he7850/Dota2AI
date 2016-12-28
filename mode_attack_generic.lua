@@ -9,9 +9,9 @@ function OnEnd()
     --print( "mode_attack_generic.OnEnd" );
 end
 
---function Think()
---    --print( "mode_attack_generic.Think" );
---end
+function Think()
+    --print( "mode_attack_generic.Think" );
+end
 
 ------------------------------------------------------------------------------------------------------------------------
 function GetDesire()
@@ -26,7 +26,7 @@ function GetDesire()
         for _, npcAlly in pairs(tableAlliedHeroesNearEnemy) do
             fEstimatedDamage = fEstimatedDamage + npcAlly:GetEstimatedDamageToTarget(false, npcEnemy, 3.0, DAMAGE_TYPE_ALL)
         end
-        local fAttackScore = RemapValClamp(fEstimatedDamage / npcEnemy.GetHealth(), 0.5, 1.5, BOT_MODE_DESIRE_NONE, BOT_MODE_DESIRE_HIGH)
+        local fAttackScore = RemapValClamped(fEstimatedDamage / npcEnemy:GetHealth(), 0.5, 1.5, BOT_MODE_DESIRE_NONE, BOT_MODE_DESIRE_HIGH)
         if fAttackScore > fBestAttackScore then
             fBestAttackScore = fAttackScore
         end
@@ -40,7 +40,7 @@ function GetDesire()
         for _, npcOtherEnemy in pairs(tableEnemyHeroesNearEnemy) do
             fEstimatedDamage = fEstimatedDamage + npcOtherEnemy:GetEstimatedDamageToTarget(false, npcBot, 3.0, DAMAGE_TYPE_ALL)
         end
-        local fRiskScore = RemapValClamp(fEstimatedDamage / npcBot.GetHealth(), 0.2, 1.2, BOT_MODE_DESIRE_HIGH, BOT_MODE_DESIRE_NONE)
+        local fRiskScore = RemapValClamped(fEstimatedDamage / npcBot:GetHealth(), 0.2, 1.2, BOT_MODE_DESIRE_HIGH, BOT_MODE_DESIRE_NONE)
         if fRiskScore > fBestRiskScore then
             fBestRiskScore = fRiskScore
         end

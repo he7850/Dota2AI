@@ -17,7 +17,13 @@ function Think()
     --print( "mode_secret_shop_generic.Think" );
 end
 
+function GetDesire()
+    local npcBot = GetBot()
+    if (IsItemPurchasedFromSecretShop(nextItemToBuy) and npcBot:GetGold()>nextItemToBuy) then
+        return BOT_ACTION_DESIRE_HIGH
+    end
 
+end
 
 
 

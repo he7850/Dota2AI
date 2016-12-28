@@ -22,19 +22,19 @@ function Think()
         --        print("IsPlayerInHeroSelectionControl(7):" .. tostring(IsPlayerInHeroSelectionControl(7)))
         --        print("IsPlayerInHeroSelectionControl(8):" .. tostring(IsPlayerInHeroSelectionControl(8)))
         --        print("IsPlayerInHeroSelectionControl(9):" .. tostring(IsPlayerInHeroSelectionControl(9)))
-        -- if (GetTeam() == TEAM_RADIANT) then
-        SelectHero(0, "npc_dota_hero_lina") -- human position
-        SelectHero(1, "npc_dota_hero_lina") -- choose lina for test
-        SelectHero(2, "npc_dota_hero_lina")
-        SelectHero(3, "npc_dota_hero_lina")
-        SelectHero(4, "npc_dota_hero_lina")
-        --elseif (GetTeam() == TEAM_DIRE) then
-        SelectHero(5, "npc_dota_hero_lina")
-        SelectHero(6, "npc_dota_hero_lina")
-        SelectHero(7, "npc_dota_hero_lina")
-        SelectHero(8, "npc_dota_hero_lina")
-        SelectHero(9, "npc_dota_hero_lina")
-        --end
+        if (GetTeam() == TEAM_RADIANT) then
+            SelectHero(0, "npc_dota_hero_lina") -- human position
+            SelectHero(1, "npc_dota_hero_lina") -- choose lina for test
+            SelectHero(2, "npc_dota_hero_lina")
+            SelectHero(3, "npc_dota_hero_lina")
+            SelectHero(4, "npc_dota_hero_lina")
+        elseif (GetTeam() == TEAM_DIRE) then
+            SelectHero(5, "npc_dota_hero_lina")
+            SelectHero(6, "npc_dota_hero_lina")
+            SelectHero(7, "npc_dota_hero_lina")
+            SelectHero(8, "npc_dota_hero_lina")
+            SelectHero(9, "npc_dota_hero_lina")
+        end
         --        print("GetSelectedHeroName(0):" .. tostring(GetSelectedHeroName(0)))
         --        print("GetSelectedHeroName(1):" .. tostring(GetSelectedHeroName(1)))
         --        print("GetSelectedHeroName(2):" .. tostring(GetSelectedHeroName(2)))
